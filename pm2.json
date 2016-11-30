@@ -1,0 +1,12 @@
+{
+  "name": "skill-exchange",
+  "cwd": "skill-exchange",
+  "script": "bin/www",
+  "error_file": "../error.txt",
+  "out_file": "../log.txt",
+  "instances": 4,
+  "env": {
+    "PORT": "80",
+    "NODE_ENV": "development"
+  }
+}

@@ -1,0 +1,103 @@
+.search {
+  h1 {
+    @media (max-width: 480px) {
+      font-size: 28px;
+    }
+  }
+  .card {
+    text-decoration: none !important;
+    .selectize-control.multi .selectize-input.has-items {
+      display: block;
+      margin-top: 5px;
+      .item {
+        margin-right: 5px;
+        background: #0FA3B1;
+        cursor: pointer;
+        border-radius: 3px;
+        color: #FFF;
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+        vertical-align: middle;
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  #main-form {
+    padding: 30px 0;
+    background: #FFF;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    .btn.btn-primary {
+      background: #0FA3B1;
+      padding: 13px;
+    }
+    #main-search {
+      font-size: 34px;
+      border: none;
+      outline: none;
+      width: 100%;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      color: #000;
+      padding: 0;
+      @media (max-width: 768px) {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+    }
+    p {
+      font-weight: 400;
+      font-size: 17px;
+      color: #666;
+      line-height: 1.5;
+      max-width: 320px;
+      margin: 10px 0 30px;
+    }
+    #remove {
+      margin: 0;
+      font-size: 32px;
+      color: #ccc;
+      cursor: pointer;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .select2-container {
+      width: 100% !important;
+      text-align: left;
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+      .select2-selection--single {
+        height: 48px;
+        .select2-selection__rendered {
+          line-height: 48px;
+          padding-left: 18px;
+          padding-right: 30px;
+        }
+        .select2-selection__arrow {
+          top: 11px;
+        }
+      }
+    }
+  }
+
+  #suggestions {
+    display: block;
+    margin-top: 5px;
+    .badge {
+      margin-right: 5px;
+      background: #0FA3B1;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+  }
+}

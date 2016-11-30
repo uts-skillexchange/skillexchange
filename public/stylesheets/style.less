@@ -1,0 +1,112 @@
+@primary: #0FA3B1;
+@white: #FFFFFF;
+@light: #fbfbfb;
+@grey: #666666;
+@black: #13171B;
+
+body {
+  padding-top: 100px;
+  font-family: 'Roboto', sans-serif !important;
+  padding-bottom: 60px;
+  &.main {
+    background: @light;
+  }
+  &.main {
+    opacity: 0;
+    transition: opacity 0.4s;
+    &.loaded {
+      opacity: 1;
+    }
+  }
+}
+
+#resend {
+  margin-top: 10px;
+  display: block;
+}
+
+.modal .nav-tabs {
+  margin-bottom: 15px;
+}
+
+.container-fluid {
+  #form {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-weight: 500;
+    font-size: 28px;
+    color: @black;
+    margin: 60px 0 20px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    color: @grey;
+    line-height: 1.5;
+    margin: 0 0 20px;
+  }
+  p, form {
+    max-width: 310px;
+  }
+}
+
+.container-fluid.external {
+  &:before {
+    content: "";
+    position: fixed;
+    width: 50%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: url('../images/hero.jpg') no-repeat 70% center;
+    background-size: cover;
+    @media (max-width: 768px) {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+  }
+  @media (max-width: 768px) {
+    margin-top: -45px;
+  }
+}
+
+.grid {
+  &.row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .grid-sizer, .grid-item {
+    width: calc(100%/3);
+    @media (max-width: 1200px) {
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+.avatar {
+  background-image: url('../images/avatar.png');
+  background-position: center center;
+  background-size: cover;
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+  max-height: none;
+}
+
+@import 'input';
+@import 'signup';
+@import 'faq';
+@import 'hero';
+@import 'card';
+@import 'messages';
+@import 'search';
+@import 'profile';
+@import 'user';
+@import 'nav';
+@import 'alert';

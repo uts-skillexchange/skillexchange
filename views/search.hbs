@@ -1,0 +1,183 @@
+<div class="hero text-center">
+  <div class="container">
+    <nav class="clearfix">
+      <b class="name pull-left">Skill Exchange</b>
+      <ul class="links pull-right">
+        <li>
+          <a href="mailto:support@skillexchange.me">Contact</a>
+        </li>
+        <li>
+          <a href="/forgot">Forgot Password</a>
+        </li>
+        <li>
+          <a href="/faq">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+    <h1>Find talented students <br class="visible-xs" /><span id="typed">interested in Startups</span></h1>
+    <p>Sign up using your UTS university ID number and enter up to 5 skills and interests to start connecting.</p>
+    <form id="email" action="/signup" method="POST" class="form-inline">
+      <div class="form-group">
+        <input type="text" name="signup-studentID" class="form-control text-right input-lg" placeholder="Your university ID number..." />
+      </div>
+      <input type="submit" class="btn btn-lg btn-primary" value="Log in or Sign up" />
+    </form>
+  </div>
+</div>
+
+<div id="main-form">
+  <div class="container">
+    <form class="row" id="search-form">
+      <div class="col-sm-7">
+        <input id="main-search" placeholder="Type in skills, interests, etc..." />
+      </div>
+      <div class="col-sm-1 text-right">
+        <p id="remove"><span aria-hidden="true">&times;</span></p>
+      </div>
+      <div class="col-sm-2 text-right">
+        <select id="main-filter">
+          <option selected value="*">All Faculties</option>
+          <option value="feit">FEIT</option>
+          <option value="business">Business</option>
+          <option value="health">Health</option>
+          <option value="dab">DAB</option>
+          <option value="law">Law</option>
+          <option value="science">Science</option>
+          <option value="fass">FASS</option>
+          <option value="bcii">BCII</option>
+        </select>
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary btn-block">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="grid row" id="students">
+    <div class="grid-sizer"></div>
+  </div>
+  <div id="empty-message" class="hidden">
+    <p>Sorry, no results! Why don't you try: <span id="suggestions"></span></p>
+  </div>
+</div>
+
+
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Signup</h4>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm" action="/signup" method="POST">
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="signupaccount">
+              <div class="form-group">
+                <label for="fullname">Full name</label>
+                <input required type="text" name="fullname" class="form-control" placeholder="John Smith" />
+              </div>
+              <div class="form-group">
+                <label for="email">University ID Number</label>
+                <input required type="text" name="email" class="form-control" placeholder="12345678" />
+              </div>
+              <div class="form-group">
+                <label for="email">Password</label>
+                <input required type="password" name="password" class="form-control" placeholder="Enter your password..." />
+              </div>
+              <a class="btn btn-default btn-block" href="#degree" aria-controls="degree" role="tab" data-toggle="tab">Continue signup...</a>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="degree">
+              <div class="form-group">
+                <label for="faculty1">What is your Faculty?</label>
+                <select required name="faculty1" class="form-control">
+                  <option value="" disabled selected>Select a faculty...</option>
+                  <option value="feit">FEIT</option>
+                  <option value="business">Business</option>
+                  <option value="health">Health</option>
+                  <option value="dab">DAB</option>
+                  <option value="law">Law</option>
+                  <option value="science">Science</option>
+                  <option value="fass">FASS</option>
+                  <option value="bcii">BCII</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="faculty2">Are you in another Faculty?</label>
+                <select name="faculty2" class="form-control">
+                  <option value="">None</option>
+                  <option value="feit">FEIT</option>
+                  <option value="business">Business</option>
+                  <option value="health">Health</option>
+                  <option value="dab">DAB</option>
+                  <option value="law">Law</option>
+                  <option value="science">Science</option>
+                  <option value="fass">FASS</option>
+                  <option value="bcii">BCII</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="degree">What degree are you studying?</label>
+                <input required type="text" name="degree" class="form-control" placeholder="Bachelor of Law / IT" />
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <a class="btn btn-default btn-block" href="#signupaccount" aria-controls="signupaccount" role="tab" data-toggle="tab">Back</a>
+                </div>
+                <div class="col-sm-6">
+                  <a class="btn btn-default btn-block" href="#personality" aria-controls="personality" role="tab" data-toggle="tab">Next</a>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="personality">
+              <div class="form-group">
+                <label for="skills">What are your top 5 skills?</label>
+                <input type="text" name="skills" id="skills" />
+              </div>
+              <div class="form-group">
+                <label for="interests">What are your top 5 interests?</label>
+                <input type="text" name="interests" id="interests" />
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <a class="btn btn-default btn-block" href="#degree" aria-controls="degree" role="tab" data-toggle="tab">Back</a>
+                </div>
+                <div class="col-sm-6">
+                  <input type="submit" class="btn btn-primary btn-block" value="Finish" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm" action="/login" method="POST">
+          <div class="form-group">
+            <label for="email">University ID</label>
+            <input type="text" name="username" class="form-control" placeholder="12345678" />
+          </div>
+          <div class="form-group">
+            <label for="email">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter your password..." />
+          </div>
+          <input type="submit" class="btn btn-primary" value="Login" />
+          <a class="btn btn-link" href="/forgot">Forgot Password</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

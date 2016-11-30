@@ -1,0 +1,61 @@
+.userModal {
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 0 auto 30px;
+  }
+
+  .fullname {
+    font-weight: 500;
+    font-size: 21px;
+    color: #000000;
+    margin: 0 0 5px;
+  }
+
+  .bio {
+    line-height: 17px;
+    margin-top: 10px;
+  }
+
+  .faculty, .degree {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 2px;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+
+  .information {
+    width: 100%;
+    max-width: 442px;
+    margin-left: 20px;
+  }
+
+  .avatar, .information {
+    @media (max-width: 768px) {
+      margin-left: 0 !important;
+      float: none !important;
+    }
+  }
+
+  .skills-row {
+    margin-top: 20px;
+  }
+
+  .selectize-control.multi .selectize-input.has-items {
+    border: none;
+    padding: 0;
+    opacity: 1;
+    background: transparent;
+    .item {
+      line-height: 1;
+      background: #f9f9f9;
+      padding: 6px;
+      color: #000;
+    }
+  }
+}

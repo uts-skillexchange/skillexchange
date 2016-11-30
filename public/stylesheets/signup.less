@@ -1,0 +1,134 @@
+body.signup {
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0;
+  .container-fluid.simple {
+    padding: 0;
+  }
+  #container {
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+  h1 {
+    font-size: 49px;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  p {
+    font-size: 18px;
+    margin: 30px auto;
+    max-width: 530px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  nav {
+    margin: 45px -60px 90px;
+    span {
+      color: #2E79BA;
+      font-size: 21px;
+      font-weight: 500;
+    }
+    a {
+      color: #999;
+      line-height: 28px;
+    }
+  }
+  input, select {
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 10px;
+    outline: none;
+    box-shadow: none;
+  }
+  input.good {
+    border-color: #4FB477;
+  }
+  input.bad {
+    border-color: #D00000;
+  }
+  .pull-left {
+      float: left;
+  }
+  .pull-right {
+      float: right;
+  }
+  .select2-container--default .select2-selection--multiple {
+      border-color: #ddd;
+      margin-bottom: 10px;
+      min-height: 0;
+      padding: 11px 16px 1px;
+  }
+  .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+      border-radius: 4px;
+  }
+  .select2-container {
+      width: 100% !important;
+      max-width: 300px;
+  }
+  .hidden, .select2-dropdown, .select2-results {
+      display: none !important;
+  }
+  #content {
+      margin-bottom: 90px;
+  }
+  button {
+      background: #2E79BA;
+      border: none;
+      color: #fff;
+      padding: 16px;
+      width: 190px;
+      border-radius: 4px;
+      display: block;
+      margin: 20px auto;
+  }
+  button.disabled {
+      opacity: 0.5;
+  }
+  #iciu p {
+      margin: 0 auto;
+      font-size: 14px;
+      color: #999;
+  }
+  #fieldEmail:focus {
+      border-color: black;
+  }
+  @media (max-width: 767px) {
+      #container {
+          max-width: 360px;
+      }
+      nav {
+          margin: 45px 0 90px;
+      }
+  }
+
+  @media (max-width: 480px) {
+      #container {
+          max-width: 260px;
+      }
+      h1 {
+          font-size: 34px;
+      }
+      p {
+          font-size: 14px;
+      }
+      .pull-left, .pull-right {
+          float: none !important;
+      }
+      nav {
+          margin-bottom: 45px;
+      }
+      nav a {
+          display: none !important;
+      }
+  }
+
+}

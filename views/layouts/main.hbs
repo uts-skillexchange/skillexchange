@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  {{> head this}}
+  <body class="main {{view}}">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Skill Exchange</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li class="{{#equals view 'search'}}active{{/equals}}"><a href="/">Search</a></li>
+            <li class="{{#equals view 'messages'}}active{{/equals}}"><a href="/messages">Messages</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="mailto:support@skillexchange.me">Contact</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a id="logout" href="/logout">Logout</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#profileModal">
+              <div id="my-avatar" class="avatar"></div>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="profileModalLabel">My Profile</h4>
+          </div>
+          <div class="modal-body">
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
+              <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+            </ul>
+
+
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="account">
+                <div class="row">
+                  <label class="text-right col-sm-3">Avatar</label>
+                  <div class="col-sm-9">
+                    <form action="/profile/avatar" method="POST" class="dropzone" id="avatar-dropzone"></form>
+                    <p id="avatar-description">Click on your profile picture to upload a new one.</p>
+                  </div>
+                </div>
+                <form id="updateForm" action="/update" method="POST" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Full name</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="fullname" required placeholder="John Smith" class="form-control fullname" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">University ID</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="email" required placeholder="12345678" class="form-control email" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Faculties</label>
+                    <div class="col-sm-4">
+                      <select required name="faculty1" class="form-control faculty1">
+                        <option value="" disabled selected>Select a faculty...</option>
+                        <option value="feit">FEIT</option>
+                        <option value="business">Business</option>
+                        <option value="health">Health</option>
+                        <option value="dab">DAB</option>
+                        <option value="law">Law</option>
+                        <option value="science">Science</option>
+                        <option value="fass">FASS</option>
+                        <option value="bcii">BCII</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-1 text-center">&amp;</div>
+                    <div class="col-sm-4">
+                      <select name="faculty2" class="form-control faculty2">
+                        <option value="">None</option>
+                        <option value="feit">FEIT</option>
+                        <option value="business">Business</option>
+                        <option value="health">Health</option>
+                        <option value="dab">DAB</option>
+                        <option value="law">Law</option>
+                        <option value="science">Science</option>
+                        <option value="fass">FASS</option>
+                        <option value="bcii">BCII</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Degree</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="degree" required placeholder="Bachelor of Law / IT" class="form-control degree" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Bio</label>
+                    <div class="col-sm-9">
+                      <textarea name="bio" size="180" placeholder="I am an awesome person (max of 180 characters)..." class="form-control bio"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Website</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="website" placeholder="www.johnsmith.com" class="form-control website" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Skills</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="skills" required class="form-control skills" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Interests</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="interests" required class="form-control interests" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="text-right col-sm-3">Visibility</label>
+                    <div class="checkbox col-sm-9">
+                      <label>
+                        <input class="visible" name="visible" type="checkbox" checked> Allow my profile to be found in Search
+                      </label>
+                    </div>
+                  </div>
+                  <input type="submit" class="btn btn-primary btn-block" value="Update my profile" />
+                </form>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="settings">
+                <div class="form-group blockedUsers">
+                  <label>Blocked users</label>
+                  <p class="empty-state">You haven't blocked any users.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      {{{body}}}
+    </div>
+
+    {{> footer this}}
+
+  </body>
+</html>

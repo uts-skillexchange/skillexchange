@@ -1,0 +1,101 @@
+@primary: #0FA3B1;
+@white: #FFFFFF;
+@light: #fbfbfb;
+@grey: #666666;
+@black: #13171B;
+
+.navbar-default .navbar-toggle {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-right: 0;
+  border-color: @white;
+  .icon-bar {
+    background: @white;
+  }
+}
+
+.navbar {
+    background: @primary;
+    box-shadow: 0px 1px 4px 0px fade(@black, 10%);
+    min-height: 70px;
+    z-index: 3;
+    .navbar-header {
+        margin-right: 5px;
+        .navbar-brand {
+            font-weight: 500;
+            font-size: 20px;
+            color: @white;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            height: 70px;
+            user-select: none;
+            img, span {
+                display: inline-block;
+            }
+            img {
+                margin: -8px 0;
+                width: 36px;
+                height: 36px;
+            }
+            span {
+                margin-left: 15px;
+            }
+        }
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+      margin: -5px 0 -5px 15px;
+    }
+    .navbar-nav {
+        li {
+            margin-bottom: 0;
+            > span {
+                display: block;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            &.active a {
+                color: @white;
+                opacity: 1;
+                background: transparent;
+                &:hover {
+                  background: transparent;
+                  color: @white;
+                }
+            }
+            a {
+                font-weight: 400;
+                font-size: 14px;
+                color: @white;
+                padding: 25px 8px;
+                opacity: 0.75;
+                &.user {
+                    padding: 17px 8px;
+                }
+                &:hover, &:focus {
+                    background: transparent;
+                    opacity: 1;
+                    color: @white;
+                }
+            }
+            &.dropdown .dropdown-menu {
+                border-color: @light;
+                border-radius: 0px 0px 3px 3px;
+                a {
+                    padding: 10px 20px;
+                    transition: none;
+                    &:hover {
+                        background: @primary;
+                        color: @white;
+                    }
+                }
+                textarea {
+                    height: 170px;
+                    resize: none;
+                }
+            }
+        }
+    }
+}

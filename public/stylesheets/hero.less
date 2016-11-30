@@ -1,0 +1,80 @@
+.search {
+  .hero {
+    background: @primary;
+    margin-top: -100px;
+    padding: 60px 0 90px;
+    color: @white;
+    position: relative;
+    + #main-form {
+      margin-top: 0;
+    }
+    p {
+      font-size: 15px;
+      @media (max-width: 767px) {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    &:after {
+      content: "";
+      background-image: url('../images/hero.jpg');
+      background-repeat: no-repeat;
+      background-position: 70% center;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      opacity: 0.1;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+    #email {
+      margin: 30px auto 0;
+      input[type="text"] {
+        width: 260px;
+        margin: 0 auto;
+      }
+    }
+    .btn {
+      border-color: transparent;
+      background: @white;
+      color: @primary;
+      margin-left: 15px;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+    ul.links {
+      list-style: none;
+      display: block;
+      padding: 0;
+      li {
+        display: inline-block;
+        &:after {
+          margin: 0 10px;
+          content: '/';
+          display: inline-block;
+        }
+        &:last-child:after {
+          content: '';
+        }
+        a {
+          color: @white;
+        }
+      }
+    }
+    .name, .links {
+      @media (max-width: 767px) {
+        float: none !important;
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+      }
+    }
+  }
+
+}
