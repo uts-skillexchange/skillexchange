@@ -91,6 +91,7 @@ app.set('view engine', '.hbs');
 
 app.locals.parse_appid = keys.parse.appid;
 app.locals.parse_javascript = keys.parse.javascript;
+app.locals.parse_serverurl = keys.parse.serverurl;
 app.locals.analytics = keys.analytics;
 app.locals.mixpanel = keys.mixpanel;
 app.locals.rollbar = keys.rollbar.client;
