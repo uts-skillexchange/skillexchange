@@ -111,3 +111,8 @@ bower_components
 
 # End of https://www.gitignore.io/api/osx,windows,node,bower,git
 temp
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
