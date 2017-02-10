@@ -622,9 +622,10 @@ $(function () {
     }, function (error) {
       if (error && error.message && error.message.toLowerCase() === 'invalid login parameters') {
         error.message = 'Username and password combination is incorrect.';
+      } else if (error.message === "User email is not verified.") {
+          window.redirect("verify");
       }
-
-      window.createAlert('error', error.message);
+      //window.createAlert('error', error.message);
     });
   });
 

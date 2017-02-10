@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var router = express.Router();
 var SendGrid = require("sendgrid");
-var sendgrid = new SendGrid('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');
+var sendgrid = new SendGrid(keys.sendgrid.key);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

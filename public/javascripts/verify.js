@@ -21,9 +21,10 @@ $(function () {
   });
 
   $('#resend').click(function (e) {
-    var user = Parse.User.current(),
-      email = user.get('email'),
-      fakeEmail = user.id + '-resend@skillexchange.com';
+    var user = Parse.User.current();
+      
+    var email = user.get('email');
+    var fakeEmail = user.id + '-resend@skillexchange.com';
 
     e.preventDefault();
 
