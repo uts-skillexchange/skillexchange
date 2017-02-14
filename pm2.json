@@ -7,6 +7,6 @@
   "instances": 4,
   "env": {
     "PORT": "80",
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
   }
 }
