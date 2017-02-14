@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var router = express.Router();
 var SendGrid = require("sendgrid");
+var keys = require("../keys.json");
 var sendgrid = new SendGrid(keys.sendgrid.key);
 
 /* GET home page. */

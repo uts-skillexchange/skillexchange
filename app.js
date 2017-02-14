@@ -58,7 +58,6 @@ var api = new ParseServer({
   allowClientClassCreation: false,
   enableAnonymousUsers: false,
   filesAdapter: new S3Adapter(keys.s3.access, keys.s3.secret, keys.s3.bucket, { directAccess: true }),
-  verifyUserEmails: true,
   emailAdapter: SimpleSendGridAdapter({
     apiKey: keys.sendgrid.api,
     fromAddress: keys.auth.email
