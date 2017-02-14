@@ -49,7 +49,6 @@ var api = new ParseServer({
   masterKey: keys.parse.master,
   fileKey: keys.parse.file,
   serverURL: keys.parse.serverurl,
-  sendUserEmails: true,
   verifyUserEmails: true,
   emailVerifyTokenValidityDuration: 7200,
   preventLoginWithUnverifiedEmail: true,
@@ -59,7 +58,7 @@ var api = new ParseServer({
   enableAnonymousUsers: false,
   filesAdapter: new S3Adapter(keys.s3.access, keys.s3.secret, keys.s3.bucket, { directAccess: true }),
   emailAdapter: SimpleSendGridAdapter({
-    apiKey: keys.sendgrid.api,
+    apiKey: keys.sendgrid.key,
     fromAddress: keys.auth.email
   }),
   accountLockout: {
