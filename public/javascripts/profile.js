@@ -153,17 +153,30 @@ $(function () {
     } else if (!interests.length) {
       return window.createAlert("error", "Please enter at least 1 interest.");
     }
-
-    var userData = {
-      fullname: fullname,
-      email: email,
-      username: email,
-      faculty1: faculty1,
-      degree: degree,
-      skills: skills,
-      interests: interests,
-      visible: visible
-    };
+      
+      //Prevents verification process if email is not updated
+      if (email !== user.attributes.email) {
+          var userData = {
+              fullname: fullname,
+              email: email,
+              username: email,
+              faculty1: faculty1,
+              degree: degree,
+              skills: skills,
+              interests: interests,
+              visible: visible
+            };
+      } else {
+          var userData = {
+              fullname: fullname,
+              username: email,
+              faculty1: faculty1,
+              degree: degree,
+              skills: skills,
+              interests: interests,
+              visible: visible
+            };
+      }
 
     if (faculty2.length) {
       userData.faculty2 = faculty2;
@@ -177,6 +190,8 @@ $(function () {
       userData.website = website;
     }
 
+      
+      
     user.save(userData).then(function () {
       window.createAlert('success', 'Successfully updated your profile!', function () {
         mixpanel.track("Update Profile");
@@ -185,6 +200,8 @@ $(function () {
     }, function (error) {
       window.createAlert('error', error);
     });
+
+    
 
   });
 
